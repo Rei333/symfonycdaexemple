@@ -4,7 +4,7 @@ namespace App\Form;
 
 use App\Entity\Article;
 use App\Entity\Category;
-use App\Entity\User;
+use App\Entity\Account;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
@@ -25,7 +25,7 @@ class ArticleType extends AbstractType
             ->add('content',TextareaType::class)
             ->add('cover', FileType::class)
             ->add('user', EntityType::class, [
-                'class' => User::class,
+                'class' => Account::class,
             ])
             ->add('categories', EntityType::class, [
                 'class' => Category::class,

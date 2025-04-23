@@ -20,7 +20,7 @@ final class ArticleController extends AbstractController
 
     #[Route('/article', name: 'app_article_all')]
     public function showAll(): Response
-    {   
+    {
         try {
             $articles = $this->articleService->getAllArticles();
         } catch (\Exception $th) {

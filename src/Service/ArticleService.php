@@ -13,7 +13,7 @@ class ArticleService
         private readonly EntityManagerInterface $em
     )
     {}
-    
+
     public function getAllArticles() :array
     {
         try {

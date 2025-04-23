@@ -16,6 +16,7 @@ class HomeController extends AbstractController
     {
     }
 
+    #[Route('/home/weather', name: 'app_home_weather')]
     public function home() :Response{
         dd($this->weather->getWeather());
         return new Response();
@@ -33,12 +34,12 @@ class HomeController extends AbstractController
         }
         else {
             if($nbr1 < 0 || $nbr2 < 0 ) {
-                $reponse = "Le nombre sont négatifs"; 
+                $reponse = "Le nombre sont négatifs";
             }
             else {
-                $reponse = "nbr1 " . $nbr1 . " plus nbr2 " . $nbr2 . " est égal à : " .($nbr1+$nbr2);  
-            }  
-        }  
+                $reponse = "nbr1 " . $nbr1 . " plus nbr2 " . $nbr2 . " est égal à : " .($nbr1+$nbr2);
+            }
+        }
         return new Response($reponse);
     }
 
@@ -48,7 +49,7 @@ class HomeController extends AbstractController
         if(is_numeric($nbr1) && is_numeric($nbr2)) {
             switch($operateur) {
                 //Test des cas d'operation
-                case 'add': 
+                case 'add':
                     $resultat = "<p>nbr1 + nbr2 est égal à : " . ($nbr1 + $nbr2) . "</p>";
                     break;
                 case 'sous':
@@ -75,7 +76,7 @@ class HomeController extends AbstractController
         else {
             $resultat = "nbr1 ou nbr2 ne sont pas des nombres";
         }
-        
-        return new Response($resultat); 
+
+        return new Response($resultat);
     }
 }

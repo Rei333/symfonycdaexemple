@@ -6,7 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Attribute\Route;
-use App\Entity\User;
+use App\Entity\Account;
 use App\Service\RegisterService;
 use App\Form\RegisterType;
 use Karser\Recaptcha3Bundle\Validator\Constraints\Recaptcha3Validator;
@@ -23,7 +23,7 @@ final class RegisterController extends AbstractController
     #[Route('/register/add', name: 'app_register_add')]
     public function index(Request $request): Response
     {
-        $user = new User();
+        $user = new Account();
 
         $form = $this->createForm(RegisterType::class, $user);
 

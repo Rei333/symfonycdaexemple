@@ -5,7 +5,7 @@ namespace App\DataFixtures;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use App\Entity\Category;
-use App\Entity\User;
+use App\Entity\Account;
 use App\Entity\Article;
 use Faker;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
@@ -24,9 +24,9 @@ class AppFixtures extends Fixture
 
         //Instancier Faker
         $faker = Faker\Factory::create("fr_FR");
-        
+
         //Boucle pour ajouter 100 catégories
-        for ($i=0; $i < 100 ; $i++) { 
+        for ($i=0; $i < 100 ; $i++) {
             $category = new Category();
             //Setter le label avec un métier aléatoire
             $category
@@ -36,8 +36,8 @@ class AppFixtures extends Fixture
             $categories[] = $category;
         }
 
-        for ($i=0; $i < 50; $i++) { 
-            $user = new User();
+        for ($i=0; $i < 50; $i++) {
+            $user = new Account();
             $user
                 ->setFirstname($faker->firstName())
                 ->setLastname($faker->lastName())
@@ -48,7 +48,7 @@ class AppFixtures extends Fixture
             $users[] = $user;
         }
 
-        for ($i=0; $i < 200 ; $i++) { 
+        for ($i=0; $i < 200 ; $i++) {
             $article = new Article();
             $article
                 ->setTitle($faker->word(3))

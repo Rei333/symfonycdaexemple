@@ -24,7 +24,7 @@ class Article
     private ?\DateTimeImmutable $createdAt = null;
 
     #[ORM\ManyToOne]
-    private ?User $user = null;
+    private ?Account $user = null;
 
     /**
      * @var Collection<int, Category>
@@ -72,12 +72,12 @@ class Article
         return $this;
     }
 
-    public function getUser(): ?User
+    public function getUser(): ?Account
     {
         return $this->user;
     }
 
-    public function setUser(?User $user): static
+    public function setUser(?Account $user): static
     {
         $this->user = $user;
 
